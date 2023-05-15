@@ -1,0 +1,14 @@
+{
+    "configFileVersion": "20220914",
+    "vdl": {
+        "tracking": {
+            "test": true,
+            "accountName": "lngParamTester",
+            "accountNameTest": "lngParamTester"
+        }
+    },
+
+    "messages":{
+        "greet":"helloooooooo"
+    }
+}

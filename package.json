@@ -1,0 +1,7 @@
+{
+  "name": "com.libertyglobal.app.configMergeTest",
+  "description": "configMergeTest",
+  "dependencies": {
+    "@lightningjs/sdk": "*"
+  }
+}
