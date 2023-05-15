@@ -1,0 +1,3 @@
+[submodule "static/libs/codelib"]
+	path = static/libs/codelib
+	url = https://bitbucket.upc.biz/scm/hznapps/codelib.git
