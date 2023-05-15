@@ -11,6 +11,7 @@ export default function(config, platformSettings) {
 
   if (process.env.NODE_ENV === "development") document.body.style.backgroundColor = "black";
 
+  require(staticUrl + "libs/onesdk/onesdk.js");
   require(staticUrl + "libs/codelib/src/specific/hz/util/string.js");
   require(staticUrl + "libs/codelib/src/specific/hz/util/util.js");
   require(staticUrl + "libs/codelib/src/util/util.js");
