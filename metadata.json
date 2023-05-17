@@ -1,6 +1,6 @@
 {
   "name": "configMergeTest",
   "identifier": "com.libertyglobal.app.configMergeTest",
-  "version": "0.0.9",
+  "version": "0.0.14",
   "icon": "./static/icon.png"
 }

@@ -1,9 +1,8 @@
 window.$_ = undefined; // fix for specific/hz/util/device.js import
 
-import { Metadata, Router, Settings, Storage, Utils } from "@lightningjs/sdk";
+import { Router, Settings, Utils } from "@lightningjs/sdk";
 import { Url } from "./util/urlUtil.js";
 
-// window.Settings = Settings;
 /**
  * Basic application class
  * Describes application setup, layout and routing
@@ -14,21 +13,18 @@ import { Url } from "./util/urlUtil.js";
 export class App extends Router.App {
 
   constructor(stage) {
-    console.log(":::: stage", stage);
-    console.log(":::: Settings", Settings);
+
     // get vmConfigUrl from settings
     let vmConfigUrl = Settings.get("app", "vmConfigUrl");
     const storeAppConfig = Settings.get("app", "storeAppConfig");
-    
+
     if(!vmConfigUrl) vmConfigUrl = Utils.ensureUrlWithProtocol(Url.makeFullStaticPath(window.location.pathname,  Settings.get("platform", "path"))) + "publishConfig/config.json";
     
     vmDtvLib.lib.init((err, config) => {
-      console.log(":::: codelib initialised");
-      console.log(":::: codelib error", err);
-      console.log(":::: codelib config", config);
+      console.log(":::: codelib initialised:: config", config);
     }, {
       configUrl: vmConfigUrl || "./static/publishConfig/config.json", // overriding vmConfigUrl in default config
-      storeAppConfig:Settings.get("app", "storeAppConfig")
+      lightning:settings
     });
 
     super(stage);

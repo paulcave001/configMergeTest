@@ -1,11 +1,11 @@
-import { Launch, Utils } from "@lightningjs/sdk";
+import { Launch, Settings, Utils } from "@lightningjs/sdk";
 import { App } from "./App.js";
 import { Url } from "./util/urlUtil.js";
 import require from "./util/require.js";
 import "./util/polyfills.js";
 
 
-export default function(config, platformSettings) {
+export default function(config, platformSettings, appSettings) {
   Url.moveHashQueryToLocationSearch();
   const staticUrl = Utils.ensureUrlWithProtocol(Url.makeFullStaticPath(window.location.pathname, platformSettings.path));
 
@@ -32,17 +32,6 @@ export default function(config, platformSettings) {
 
   const _config = {
     ...config,
-    keys: {
-      227: "Rewind",    // RCU MediaRewind
-      228: "FastForward",    // RCU MediaFastForward
-      27: "Return",     // Key B
-      66: "Return",     // RCU Back
-      13: "Enter",      // Key Enter
-      16: "PlayPause",      // Key Shift
-      179: "PlayPause",      // RCU Play
-      93: "ContextMenu", // Key OPTIONS
-      79: "ContextMenu", // Key O as OPTIONS
-    },
   };
 
   return Launch(App, _config, platformSettings);
