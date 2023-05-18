@@ -24,7 +24,7 @@ export class App extends Router.App {
       console.log(":::: codelib initialised:: config", config);
     }, {
       configUrl: vmConfigUrl || "./static/publishConfig/config.json", // overriding vmConfigUrl in default config
-      lightning:settings
+      lightningAccess:{settings:Settings}
     });
 
     super(stage);
